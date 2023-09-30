@@ -4,6 +4,7 @@ import { useState } from 'react'
 function App() {
   const [fontFamily, setFontFamily] = useState('sans-serif');
   const [ballMargin, setBallMargin] = useState('0px');
+  const [fontFamilyList, setFontFamilyList] = useState(false)
   const [inputValue, setInputValue] = useState('');
   console.log(inputValue)
   //Ball Click Function
@@ -31,10 +32,11 @@ function App() {
           {/* Font Family Changer */}
           <div className="font-family-div">
             <p style={{fontFamily: fontFamily, color: ballMargin == '0px'? '#2D2D2D': '#FFF'}}>{fontFamily}</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
+            <svg onClick={() => setFontFamilyList(!fontFamilyList)}xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9" fill="none">
               <path d="M1 1L7 7L13 1" stroke="#A445ED" stroke-width="1.5"/>
             </svg>
           </div>
+
           <hr style={{backgroundColor: ballMargin == '0px'? '#E9E9E9': '#FFF'}}/> {/* <-- Border  */}
           {/* Day & Night Changer  */}
           <div className='day-night-div'>
@@ -60,6 +62,14 @@ function App() {
            style={{backgroundColor: ballMargin == '0px'? '#F4F4F4': '#1F1F1F', color: ballMargin == '0px'? '#2D2D2D': '#FFF',
            fontFamily: fontFamily}}/>
         </form>
+
+      {fontFamilyList && <div className="font-family-list" style={{backgroundColor: ballMargin == '0px'? '#FFF': '#1F1F1F',
+        color: ballMargin == '0px'? '#2D2D2D': '#FFFFFF',
+        boxShadow: ballMargin == '0px'? '0px 5px 30px 0px rgba(0, 0, 0, 0.10)': ' 0px 5px 30px 0px #A445ED'}}>
+          <p onClick={() => {setFontFamily('sans-serif'); setFontFamilyList(!fontFamilyList)}} style={{fontFamily: 'sans-serif'}} className='sans-serif'>Sans Serif</p>
+          <p onClick={() => {setFontFamily('serif'); setFontFamilyList(!fontFamilyList)}} style={{fontFamily: 'serif'}} className='serif'>Serif</p>
+          <p onClick={() => {setFontFamily('monospace'); setFontFamilyList(!fontFamilyList)}} style={{fontFamily: 'monospace'}} className='mono'>Mono</p>
+        </div>}
 
         <div className='search-div'>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

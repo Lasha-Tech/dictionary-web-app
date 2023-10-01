@@ -16,6 +16,7 @@
 
     .header {
         width: 100%;
+        height: 32px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -30,6 +31,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .font-family-list {
+        position: absolute;
+        z-index: 2;
+        top: 65px;
+        right: 130px;
+        width: 163px;
+        height: 132px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 16px;
+        border-radius: 16px;
     }
 
     .right-div hr {
@@ -75,21 +91,6 @@
         margin: 24px 0 28px;
     }
 
-    .font-family-list {
-        position: relative;
-        z-index: 2;
-        right: 70px;
-        top: 18px;
-        width: 183px;
-        height: 132px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 16px;
-        border-radius: 16px;
-    }
-
     .input-div {
         width: 100%;
         height: 48px;
@@ -100,7 +101,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* font-family: ; */
     }
 
     .input-div input {   
@@ -124,5 +124,134 @@
     .warning {
         color: #FF5252;
         font-size: 16px;
+        margin-bottom: -24px;
+    }
+
+    .result {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .audio-player {
+        width: 48px;
+        height: 48px;
+    }
+
+    .word-result {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 31px;
+    }
+
+    .word {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 9px;
+    }
+
+    .word-saying-form {
+        font-family: sans-serif;
+        color: #A445ED;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .noun-verb {
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        margin-bottom: 34px;
+    }
+
+    .noun-verb p {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .noun-verb hr,
+    .footer-border {
+        width: 100%;
+        border: none;
+        height: 1px;
+    }
+
+    .meaning {
+        color: #757575;
+        margin-bottom: 17px;        
+    }  
+    
+    .list-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+    }
+
+    .list-item {
+        width: 100%;
+        display: flex;
+    }
+
+    .list-item li {
+        margin-right: 10px;
+        color: #8F19E8;
+        padding-top: 3px;
+    }
+
+    .list-item p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .synonyms-div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 24px;
+        margin: 24px 0 33px;
+    }
+
+    .synonym-title {
+        color: #757575;
+    }
+
+    .synonym {
+        color:  #A445ED;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .footer-border {
+        margin: 32px 0px 24px;
+    }
+
+    .source {
+        color: #757575;
+        font-size: 14px;
+        text-decoration-line: underline;
+        margin-bottom: 8px;
+    }
+
+    .source-div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .source-div a,
+    .source-div a:visited {
+        text-decoration: none;
+    }
+
+    .source-div svg {
+        margin-left: 8px;
+        vertical-align: middle;
     }
 }

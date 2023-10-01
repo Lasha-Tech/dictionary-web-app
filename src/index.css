@@ -144,7 +144,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 31px;
     }
 
     .word {
@@ -165,7 +164,7 @@
         display: flex;
         gap: 25px;
         align-items: center;
-        margin-bottom: 34px;
+        margin: 34px 0;
     }
 
     .noun-verb p {
@@ -215,7 +214,7 @@
         align-items: center;
         justify-content: flex-start;
         gap: 24px;
-        margin: 24px 0 33px;
+        padding-top: 24px;
     }
 
     .synonym-title {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import styled, { css } from "styled-components";
 import { useState } from "react";
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/" + inputValue);
+        "https://api.dictionaryapi.dev/api/v2/entries/en/" + inputValue
+      );
 
       //Word
       setWord(response.data[0].word);
@@ -145,8 +147,10 @@ function App() {
         {/* Right  */}
         <div className="right-div">
           {/* Font Family Changer */}
-          <div className="font-family-div"
-          onClick={() => setFontFamilyList(!fontFamilyList)}>
+          <div
+            className="font-family-div"
+            onClick={() => setFontFamilyList(!fontFamilyList)}
+          >
             <p
               style={{
                 fontFamily: fontFamily,
@@ -219,17 +223,13 @@ function App() {
           {/* <-- Border  */}
           {/* Day & Night Changer  */}
           <div className="day-night-div">
-            <div
-              className="day-night-changer"
-              style={{
-                backgroundColor: ballMargin == "0px" ? "#757575" : "#A445ED",
-              }}
-            >
+            <DayNightChanger ballMargin={ballMargin}>
               <div
+                className="ball"
                 style={{ marginLeft: ballMargin }}
                 onClick={() => handleBallMargin()}
               ></div>
-            </div>
+            </DayNightChanger>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -254,15 +254,10 @@ function App() {
 
       {/* Input Container  */}
       <div className="input-parent-div">
-        <div
-          className="input-div"
-          style={{
-            backgroundColor: ballMargin == "0px" ? "#F4F4F4" : "#1F1F1F",
-            borderColor: inputValue == "" ? "#FF5252" : "transparent",
-          }}
-        >
-          <form onSubmit={(e) => e.preventDefault()}>
+          <InputDiv ballMargin={ballMargin} inputValue={inputValue}>
+            <form onSubmit={(e) => e.preventDefault()}>
             <input
+              className="input"
               type="text"
               placeholder="Search for any word…"
               value={inputValue}
@@ -295,7 +290,9 @@ function App() {
               />
             </svg>
           </div>
-        </div>
+          </InputDiv>
+
+          {/* Input Error Message  */}
         {inputValue == "" ? (
           <p className="warning" style={{ fontFamily: fontFamily }}>
             Whoops, can’t be empty…
@@ -350,7 +347,14 @@ function App() {
               viewBox="0 0 48 48"
               fill="none"
             >
-              <circle className='circle' opacity="0.25" cx="24" cy="24" r="24" fill="#A445ED" />
+              <circle
+                className="circle"
+                opacity="0.25"
+                cx="24"
+                cy="24"
+                r="24"
+                fill="#A445ED"
+              />
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -512,3 +516,74 @@ function App() {
 }
 
 export default App;
+
+
+// Day & Night Changer Div 
+const DayNightChanger = styled.div(
+  (props) => css`
+    background-color: ${props.ballMargin === "0px" ? "#757575": "#A445ED"};
+    width: 40px;
+    height: 20px;
+    border-radius: 40px;
+    padding: 3px;
+
+    @media (min-width: 1440px) {
+      &:hover {
+      background-color: #A445ED;
+      cursor: pointer;
+    }
+    }
+  `);
+
+// Input Div
+const InputDiv = styled.div(
+  (props) => css`
+    @media (min-width: 375px) {
+      width: 100%;
+      height: 48px;
+      padding: 16px 24px 15px;
+      border-radius: 15px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: ${props.inputValue === ""? "#FF5252": "transparent"};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: ${props.ballMargin === "0px" ? "#F4F4F4" : "#1F1F1F"};
+    }
+
+    @media (min-width: 768px) {
+      width: 100%;
+      height: 64px;
+      padding: 22px 24px 21px;
+      border-radius: 15px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: ${props.inputValue === ""? "#FF5252": "transparent"};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+      background-color: ${props.ballMargin === "0px" ? "#F4F4F4" : "#1F1F1F"};
+    }
+
+    @media (min-width: 1440px) {
+      width: 100%;
+      height: 64px;
+      padding: 22px 24px 21px;
+      border-radius: 15px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: ${props.inputValue === ""? "#FF5252": "transparent"};
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+      background-color: ${props.ballMargin === "0px" ? "#F4F4F4" : "#1F1F1F"};
+      &:hover {
+        border-color: ${props.inputValue !== ''? '#A445ED': '#FF5252'};
+      }
+    }
+`)

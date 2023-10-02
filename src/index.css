@@ -11,7 +11,6 @@
         flex-direction: column;
         align-items: center;
         padding: 24px 24px 63px;
-        overflow: scroll;
     }
 
     .header {
@@ -59,6 +58,7 @@
         align-items: center;
         gap: 16px;
         padding-right: 16px;
+        font-weight: 700;
     }
 
     .day-night-div {
@@ -342,6 +342,7 @@
 
     .font-family-div p {
         font-size: 18px;
+        font-weight: 700;
     }
 
     .day-night-div {
@@ -576,4 +577,319 @@
 }
 
 
+
+@media (min-width: 1440px) {
+    .App {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 58px 351px 125px;
+    }
+  
+    .header {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    .book-svg { 
+        width: 28px;
+        height: 32px;
+    }
+  
+    .right-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    .font-family-list {
+        position: absolute;
+        z-index: 2;
+        top: 100px;
+        right: 480px;
+        width: 183px;
+        height: 152px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .font-family-list p:hover {
+        cursor: pointer;
+        color: #A445ED;
+    }
+  
+    .right-div hr {
+        border: unset;
+        width: 1px;
+        height: 32px;
+    }
+  
+    .font-family-div {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding-right: 26px;
+    }
+
+    .font-family-div:hover {
+        cursor: pointer;
+    }
+  
+    .font-family-div p {
+        font-size: 18px;
+        font-weight: 700;
+    }
+  
+    .day-night-div {
+        display: flex;
+        gap: 18px;
+        padding-left: 26px;
+        align-items: center;
+    }
+  
+    .day-night-changer {
+        width: 40px;
+        height: 20px;
+        border-radius: 40px;
+        padding: 3px;
+    }
+  
+    .day-night-changer div {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: white;
+    }
+  
+    .input-parent-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin: 51px 0 50px;
+    }
+  
+    .input-div {
+        width: 100%;
+        height: 64px;
+        padding: 22px 24px 21px;
+        border-radius: 15px;
+        border-width: 1px;
+        border-style: solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        overflow: hidden;
+    }
+  
+    .input-div input {   
+        width: 200%;
+        border: unset;
+        outline: none;
+        font-size: 20px;
+        font-weight: 700;
+    }
+  
+    .input-div input::placeholder {
+        opacity: 0.35;
+    }
+  
+    .search-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .warning {
+        color: #FF5252;
+        font-size: 20px;
+        margin-bottom: -29px;
+    }
+  
+    .result {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .audio-player {
+        width: 75px;
+        height: 75px;
+    }
+
+    .audio-player:hover circle {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .audio-player:hover path {
+        fill: #FFF;
+    }
+  
+    .word-result {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    .word {
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 9px;
+    }
+  
+    .word-saying-form {
+        font-family: sans-serif;
+        color: #A445ED;
+        font-size: 24px;
+        line-height: 24px;
+    }
+  
+    .noun-verb {
+        width: 100%;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        margin: 43px 0;
+    }
+  
+    .noun-verb p {
+        font-size: 24px;
+        font-weight: 700;
+    }
+  
+    .noun-verb hr,
+    .footer-border {
+        width: 100%;
+        border: none;
+        height: 1px;
+    }
+  
+    .meaning {
+        color: #757575;
+        margin-bottom: 25px;    
+        font-size: 20px;    
+    }  
+    
+    .list-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        padding-left: 30px;
+    }
+  
+    .list-item {
+        width: 100%;
+        display: flex;
+    }
+  
+    .list-item li {
+        margin-right: 10px;
+        color: #8F19E8;
+        padding-top: 3px;
+    }
+  
+    .list-item p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+  
+    .synonyms-div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        padding-top: 40px;
+    }
+  
+    .synonym-title {
+        color: #757575;
+        font-size: 20px;
+    }
+  
+    .synonym {
+        color:  #A445ED;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .synonym:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+  
+    .footer-border {
+        margin: 39px 0px 21px;
+    }
+  
+    .source-container {
+        display: flex;
+        gap: 21px;
+    }
+  
+    .source {
+        color: #757575;
+        font-size: 14px;
+        text-decoration-line: underline;
+        margin-bottom: 0px;
+    }
+  
+    .source-div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+  
+    .source-div a,
+    .source-div a:visited {
+        text-decoration: none;
+    }
+  
+    .source-div svg {
+        margin-left: 15px;
+        vertical-align: middle;
+    }
+  
+    .error-container {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 45px;
+    }
+  
+    .emoji {
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
+  
+    .not-found {
+        font-size: 22px;
+        font-weight: 700;
+    }
+  
+    .sorry-message {
+        color: #757575;
+        text-align: center;
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 24px;
+    }
+  }  
 

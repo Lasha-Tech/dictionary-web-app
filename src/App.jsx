@@ -32,12 +32,7 @@ function App() {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/" + inputValue,
-        (headers = {
-          accept: "application/json",
-          contentType: "application/json",
-        })
-      );
+        "https://api.dictionaryapi.dev/api/v2/entries/en/" + inputValue);
 
       //Word
       setWord(response.data[0].word);
@@ -150,7 +145,8 @@ function App() {
         {/* Right  */}
         <div className="right-div">
           {/* Font Family Changer */}
-          <div className="font-family-div">
+          <div className="font-family-div"
+          onClick={() => setFontFamilyList(!fontFamilyList)}>
             <p
               style={{
                 fontFamily: fontFamily,
@@ -160,7 +156,6 @@ function App() {
               {fontFamily}
             </p>
             <svg
-              onClick={() => setFontFamilyList(!fontFamilyList)}
               xmlns="http://www.w3.org/2000/svg"
               width="13"
               height="9"
@@ -355,7 +350,7 @@ function App() {
               viewBox="0 0 48 48"
               fill="none"
             >
-              <circle opacity="0.25" cx="24" cy="24" r="24" fill="#A445ED" />
+              <circle className='circle' opacity="0.25" cx="24" cy="24" r="24" fill="#A445ED" />
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
